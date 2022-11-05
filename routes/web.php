@@ -14,19 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PostsController::class , 'index']);
+Route::get('/', [PostsController::class, 'index']);
 
-Route::get('Posts',[PostsController::class , 'index']);
+Route::get('Posts', [PostsController::class, 'index']);
 
-Route::post('/Posts/update/{post}',[PostsController::class,'update']);
+Route::post('/Posts/update/{post}', [PostsController::class, 'update']);
 
-Route::get('/Posts/Create',[PostsController::class , 'Create']);
+Route::get('/Posts/Create', [PostsController::class, 'Create']);
 
-Route::post( "/Posts",[PostsController::class,'store']);
+Route::post("/Posts", [PostsController::class, 'store']);
 
-Route::get("/Posts/{post}/edit",[PostsController::class,'Edit']);
+Route::get("/Posts/{post}/edit", [PostsController::class, 'Edit']);
 
-Route::get('/Posts/{post}',[PostsController::class , 'show']);
+Route::get('/Posts/{post}', [PostsController::class, 'show']);
 
-Route::Delete('/Posts/{post}',[PostsController::class , 'destroy']);
-    
+Route::Delete('/Posts/{post}', [PostsController::class, 'destroy']);

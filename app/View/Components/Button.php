@@ -2,21 +2,21 @@
 
 namespace App\View\Components;
 
+use Dotenv\Parser\Value;
 use Illuminate\View\Component;
 
 class Button extends Component
 {
-    public $type;
-    public $value;
+  public $value;
+  public $co;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type,$value)
+    public function __construct($color)
     {
-        $this->$type=$type;
-        $this->$value=$value;
+        $this->co = $color;
         //
     }
 
