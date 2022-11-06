@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostsController extends Controller
 {
@@ -15,7 +16,9 @@ class PostsController extends Controller
 
     public function Create()
     {
-        return view("Posts.Create");
+        $users=User::all();
+       // dd($users);
+        return view("Posts.Create",['users'=>$users]);
     }
 
     public function index()
@@ -45,8 +48,10 @@ class PostsController extends Controller
         $created_by=request()->sel ;
         $Email=request()->Emaill ;
         
+        
         $post=Post::create(['title'=>$title,
                             'Desc'=>$Desc,
+                            'user_id'=>$created_by,
                             'Name'=>$created_by,
                             'Email'=>$Email]);
         return redirect(route('posts.index'));
@@ -54,9 +59,11 @@ class PostsController extends Controller
 
     public function Edit($id)
     {
+        $users=User::all();
         $Editt=Post::findorfail($id);
         return view("Posts.Edit", [
-            'array' => $Editt
+            'array' => $Editt,
+            'users'=>$users 
         ]);
     }
 
@@ -68,13 +75,14 @@ class PostsController extends Controller
 
     public function update($id,Request $request)
     {
+        
         $title=$request->title;
         $Desc=$request->Desc;
         $Name=$request->sel;
       
   Post::where('id',$id)->update(['title'=>$title,
                                 'Desc'=>$Desc,
-                                'Name'=>$Name]);
+                                'user_id'=>$Name]);
     return redirect(route('posts.index'));
 
     }

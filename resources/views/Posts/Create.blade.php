@@ -28,9 +28,10 @@
               <div class="mb-3">
                   <select class="form-select" name="sel" aria-label="Default select example">
                       <option selected>Open this select Option</option>
-                      <option value="Omar">Omar</option>
-                      <option value="Marwan">Marwan</option>
-                      <option value="Badr">Badr</option>
+                      @foreach($users as $user)
+                      <option value="{{$user->id}}">{{$user->name}}</option>
+                      @endforeach
+                      
                   </select>
               </div>
               <button type="submit" class="btn btn-primary">Create</button>

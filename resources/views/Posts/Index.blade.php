@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-
+                
                 @foreach ($posts as $post)
                     <tr>
                         <th scope="row">{{ $post['id'] }}</th>
@@ -28,8 +28,8 @@
                         <td>{{ $post['Desc'] }}</td>
                         
                         <td>{{ $post['created_at'] }}</td>
-                        
-                        <td></td>
+                         
+                        <td>{{$post->user?$post->user->name:'Not Found User'}}</td>
                         <td>
                             <!-- <x-button color="info">view</x-button>
                                 <x-button color="primary">Edit</x-button>

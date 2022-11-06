@@ -18,8 +18,8 @@
 
         <div class="card">
             <h5 class="card-header">Post Creator Info</h5>
-            <div class="card-body">
-                <h5 class="card-title">Name: {{ $array->Name }} </h5>
+            <div class="card-body">        
+                <h5 class="card-title">Name:  {{$array->user?$array->user->name:'Not Found User'}} </h5>
                 <p class="card-text">Email: {{ $array->Email }} </p>
                 <p class="card-text">Created At: {{ $array->created_at }} </p>
 
