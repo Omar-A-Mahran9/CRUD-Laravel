@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -19,10 +20,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/Posts">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog Post</a>
+                        <a class="nav-link" href="/Posts">Blog Post</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Posts">ALL Posts</a>
@@ -33,6 +34,12 @@
     </nav>
 
     @yield('content')
+
+
+
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 </body>
 
 </html>
